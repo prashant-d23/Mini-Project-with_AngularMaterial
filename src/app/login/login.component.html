@@ -1,0 +1,36 @@
+
+<div id="custom-margin">
+  <div class="alert alert-danger w-50 mt-5" id="error" role="alert" *ngIf="errorMessage != ''">
+    {{errorMessage}}
+  </div>
+
+  <div class="container p-3 w-25" id="margin">
+
+    <form [formGroup]="logInForm" (ngSubmit)="logIn()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" id="email" formControlName="user_email" >
+
+        <div class="row" *ngIf="email?.touched && email?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="email?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="text" class="form-control" name="password" id="password" formControlName="user_pwd" >
+
+        <div class="row" *ngIf="password?.touched && password?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="password?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mb-3">LogIn</button>
+
+      <div class="mb-3">
+        <span>Don't have an account </span><a routerLink="/signup">SignUp</a>&nbsp;
+      </div>
+    </form>
+  </div>
+
+
+
+</div>

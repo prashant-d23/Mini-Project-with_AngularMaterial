@@ -1,0 +1,53 @@
+<div class="container" id="custom-margin">
+
+  <div class="container p-4 w-50" id="shadow">
+    <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+
+      <!-- userName  -->
+      <div class="mb-3">
+        <label for="uName" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="uName" formControlName="user_name">
+      </div>
+
+      <!-- email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" formControlName="user_email">
+      </div>
+
+      <!-- contact  -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" id="phone" formControlName="user_phone_no">
+      </div>
+
+      <!-- password  -->
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Password</label>
+        <input type="text" class="form-control" id="pwd" formControlName="user_pwd">
+      </div>
+
+       <!-- gender  -->
+     <div class="mb-3">
+      <label for="gender" class="form-label">Gender :</label>&nbsp;
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="male" value='male' formControlName="user_gender">
+        <label for="male" class="form-check-label">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="female" value="female" formControlName="user_gender">
+        <label for="female" class="form-check-label">Female</label>
+      </div>
+     </div>
+
+     <button type="submit" class="btn btn-primary">Submit</button>
+
+      <div class="mt-3">
+        <span>Already have an account</span>&nbsp; <a routerLink="/login">LogIn</a>&nbsp;
+      </div>
+
+    </form>
+  </div>
+
+
+  </div>
